@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#! /usr/bin/env python
 from __future__ import print_function
  
 import roslib
@@ -39,29 +39,19 @@ class image_converter:
 	    
 	    
 	    if number_of_black_pix  > len(self.cv_image_m)*0.3:
-	    	#print("middle sensor: HIGH")
 	    	self.pub.publish("0")
-
 	    	
 	    else:
-	
-	    	#print("middle sensor: LOW")
 	    	self.pub.publish("1")
 
 	    lines_m = None
 	
-
 	    cv2.imshow("middle_sensor", self.cv_image_m)
 	    cv2.waitKey(3)
 
-
-	    #print("_________________________________________")
 	  except CvBridgeError as e:
 	    print(e)
 
-	  
-	  	  
-	  
 
 def main(args):
   ic = image_converter()

@@ -34,29 +34,21 @@ class image_converter:
 	    lines_r = cv2.HoughLines(edges_r,1,np.pi/180,10)
 
 	    number_of_black_pix = np.sum(self.cv_image_r == 0) 
-	    
-	    rospy.loginfo(number_of_black_pix)
 
 	    if number_of_black_pix  > len(self.cv_image_r)*0.3:
-	    	#print("right sensor: HIGH")
 	    	self.pub.publish("0")
 	    
 	    else:
-	    	#print("right sensor: LOW")
 	    	self.pub.publish("1")
 	    lines_r = None
 
 	    cv2.imshow("right_sensor", self.cv_image_r)
 	    cv2.waitKey(3)
 
-
-	    #print("_________________________________________")
 	  except CvBridgeError as e:
 	    print(e)
 
-	  
-	  	  
-	  
+  
 
 def main(args):
   ic = image_converter()

@@ -41,12 +41,10 @@ class image_converter:
 	    
 	    
 	    if number_of_black_pix  > len(self.cv_image_l)*0.3:
-	    	#print("Left sensor: HIGH")
 	    	self.pub.publish("0")
 	  	    
 	    else:
 
-	    	#print("Left sensor: LOW")
 	    	self.pub.publish("1")
 	    lines_l = None
 
@@ -54,13 +52,10 @@ class image_converter:
 	    cv2.waitKey(3)
 
 
-	    #print("_________________________________________")
 	  except CvBridgeError as e:
 	    print(e)
 
-	  
-	  	  
-	  
+  
 
 def main(args):
   ic = image_converter()
