@@ -72,7 +72,7 @@ class image_converter:
 # ______________________________________________________________________________________________________________________
 
 #	Create algorithm for line follower robot based on the sensor data (self.left, self.right and self.middle).
-#	Based on your decision set value for self.vel.linear.x (for moving robot forward) and self.vel.angular.y (for turning robot
+#	Based on your decision set value for self.vel.linear.x (for moving robot forward) and self.vel.angular.z (for turning robot
 #	left or right)
 
 #	self.vel.linear.x should be less than 1. You can set any value for stable movement of robot  
